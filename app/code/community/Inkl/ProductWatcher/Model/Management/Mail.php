@@ -16,22 +16,22 @@ class Inkl_ProductWatcher_Model_Management_Mail
 
 			if (count($newHashProducts))
 			{
-				$this->addAttachment($emailTemplate, 'new.txt', $newHashProducts);
+				$this->addAttachment($emailTemplate, 'new.csv', $newHashProducts);
 			}
 
 			if (count($deletedHashProducts))
 			{
-				$this->addAttachment($emailTemplate, 'deleted.txt', $deletedHashProducts);
+				$this->addAttachment($emailTemplate, 'deleted.csv', $deletedHashProducts);
 			}
 
 			if (count($enabledHashProducts))
 			{
-				$this->addAttachment($emailTemplate, 'enabled.txt', $enabledHashProducts);
+				$this->addAttachment($emailTemplate, 'enabled.csv', $enabledHashProducts);
 			}
 
 			if (count($disabledHashProducts))
 			{
-				$this->addAttachment($emailTemplate, 'disabled.txt', $disabledHashProducts);
+				$this->addAttachment($emailTemplate, 'disabled.csv', $disabledHashProducts);
 			}
 
 			return $emailTemplate->send($this->getEmailReceiver());
