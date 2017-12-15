@@ -118,10 +118,10 @@ class Inkl_ProductWatcher_Model_Management_Mail
 	private function addAttachment($emailTemplate, $filename, $hashProducts)
 	{
 		$lines = [];
-		$lines[] = implode('|', ['website', 'sku', 'name', 'status']);
+		$lines[] = implode(';', ['website', 'sku', 'name', 'status']);
 		foreach ($hashProducts as $hashProduct)
 		{
-			$lines[] = implode('|', [
+			$lines[] = implode(';', [
 				Mage::app()->getStore($hashProduct['store_id'])->getWebsite()->getName(),
 				$hashProduct['product_sku'],
 				$hashProduct['product_name'],
