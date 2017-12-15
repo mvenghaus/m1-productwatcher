@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Inkl_ProductWatcher>
+			<version>0.1.0</version>
+		</Inkl_ProductWatcher>
+	</modules>
+	<global>
+		<helpers>
+			<inkl_productwatcher>
+				<class>Inkl_ProductWatcher_Helper</class>
+			</inkl_productwatcher>
+		</helpers>
+		<models>
+			<inkl_productwatcher>
+				<class>Inkl_ProductWatcher_Model</class>
+				<resourceModel>inkl_productwatcher_resource</resourceModel>
+			</inkl_productwatcher>
+			<inkl_productwatcher_resource>
+				<class>Inkl_ProductWatcher_Model_Resource</class>
+				<entities>
+					<watcher>
+						<table>catalog_product_watcher</table>
+					</watcher>
+				</entities>
+			</inkl_productwatcher_resource>
+		</models>
+
+		<resources>
+			<inkl_productwatcher_setup>
+				<setup>
+					<module>Inkl_ProductWatcher</module>
+				</setup>
+			</inkl_productwatcher_setup>
+		</resources>
+	</global>
+
+	<adminhtml>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<inkl_productwatcher module="inkl_productwatcher" translate="title">
+											<title>Product Watcher</title>
+										</inkl_productwatcher>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+
+	<crontab>
+		<jobs>
+			<inkl_productwatcher>
+				<schedule>
+					<cron_expr>2 2 * * *</cron_expr>
+				</schedule>
+				<run>
+					<model>inkl_productwatcher/cron::run</model>
+				</run>
+			</inkl_productwatcher>
+		</jobs>
+	</crontab>
+</config>

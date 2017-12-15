@@ -1,0 +1,25 @@
+{
+	"name": "inkl/m1-productwatcher",
+	"type": "magento-module",
+	"authors": [
+		{
+			"name": "Marcus Venghaus",
+			"email": "info@inklammern.de"
+		}
+	],
+	"require": {
+		"magento-hackathon/magento-composer-installer": "*"
+	},
+	"extra": {
+		"map": [
+			[
+				"app/code/community/Inkl/ProductWatcher",
+				"app/code/community/Inkl/ProductWatcher"
+			],
+			[
+				"app/etc/modules/Inkl_ProductWatcher.xml",
+				"app/etc/modules/Inkl_ProductWatcher.xml"
+			]
+        ]
+	}
+}
